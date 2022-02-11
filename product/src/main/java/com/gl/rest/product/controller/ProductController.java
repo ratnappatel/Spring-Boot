@@ -24,7 +24,7 @@ public class ProductController {
 	@Autowired
 	ProductRepository repository;
 	
-	@GetMapping("/products")
+	@GetMapping("/products") // http://localhost:8080/api/products
 	public List<Product> getAllProduct()
 	{
 		//implicit sql executed by JpaRepository is select * from product

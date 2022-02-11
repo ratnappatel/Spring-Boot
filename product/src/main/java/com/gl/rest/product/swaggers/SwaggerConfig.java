@@ -18,8 +18,9 @@ public class SwaggerConfig {
 	public Docket productsAPI()
 	{
 		return new Docket(DocumentationType.SWAGGER_2)
-				.select().apis(RequestHandlerSelectors.basePackage("com.gl.rest.product.controller"))
-				.paths(PathSelectors.ant("/products/**"))
-				.build();
+				.select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
 	}
 }
