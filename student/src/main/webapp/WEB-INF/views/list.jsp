@@ -13,16 +13,17 @@
 <h1>Student List</h1>
 <table border="5">
 	<tr>
-		<th>Rollno</th><th>Name</th><th>Stream</th><th>MobileNo</th><th>Marks</th>
+		<th>Rollno</th><th>Name</th><th>Stream</th>
+		<th>MobileNo</th><th>Marks</th><th>Update</th><th>Remove</th>
 	</tr>
 	<c:forEach var="s" items="${students}">
 		<tr>
-			<td>${s.key}</td>
-			<td>${s.value.getName()}</td>
-			<td>${s.value.getStream()}</td>
-			<td>${s.value.getMobileNo()}</td>
-			<td>${s.value.getMarks()}</td>
-			<td><a href="">Edit</a></td>
+			<td>${s.getRollno()}</td>
+			<td>${s.getName()}</td>
+			<td>${s.getStream()}</td>
+			<td>${s.getMobileNo()}</td>
+			<td>${s.getMarks()}</td>
+			<td><a href="edit/s.getRollno()">Edit</a></td>
 			<td><a href="">Delete</a></td>
 		</tr>
 	</c:forEach>	

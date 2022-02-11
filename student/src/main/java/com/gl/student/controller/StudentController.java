@@ -1,6 +1,6 @@
 package com.gl.student.controller;
 
-import java.util.TreeMap;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.gl.student.model.Student;
 import com.gl.student.service.StudentService;
 
+// marks a java class as MVC Controller class
+
 @Controller
 public class StudentController {
 
-	@Autowired
-	StudentService studentService;
 	
+	  @Autowired StudentService service;
+	 
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String displayAll(Model m)
 	{
 		System.out.println("In display All");
-		TreeMap<Integer,Student> students=studentService.getStudents();
-		System.out.println("retrieved students from dao");
+		ArrayList<Student> students=service.getAll();
 		m.addAttribute("students", students);
-		System.out.println("added model attribute.");
 		return "list";
 		
 	}
