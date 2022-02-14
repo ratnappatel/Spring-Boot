@@ -26,6 +26,6 @@
 		</tr>
 	</c:forEach>	
 </table>
-<a href="">Add New Employee</a>
+<a href="http://localhost:8080/employees/add">Add New Employee</a>
 </body>
 </html>

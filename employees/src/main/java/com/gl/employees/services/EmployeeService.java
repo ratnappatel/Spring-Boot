@@ -20,5 +20,11 @@ public class EmployeeService {
 		emps.sort((e1,e2)->e1.getSalary()-e2.getSalary());
 		return emps;
 	}
+	
+	public Employee addEmployee(Employee e)
+	{
+		Employee emp=repository.save(e);
+		return emp;		
+	}
 
 }
