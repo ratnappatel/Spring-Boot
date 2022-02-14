@@ -12,13 +12,13 @@ public class UserService {
 	@Autowired 
 	UserRepository repository;
 	
-	public String authenticate(User user)
+	public User authenticate(User user)
 	{
 		User exists=repository.findByIdAndPassword(user.getId(),user.getPassword());
 		if(user!=null)
-			return "success";
+			return exists;
 		else
-			return "fail";
+			return null;
 	}
 
 }
