@@ -24,8 +24,9 @@ public class ProductController {
 	@Autowired
 	ProductRepository repository;
 	
-	@GetMapping("/products") // http://localhost:8080/api/products
+	@GetMapping("/products") // REST-Endpoints http://localhost:8080/api/products
 	public List<Product> getAllProduct()
+
 	{
 		//implicit sql executed by JpaRepository is select * from product
 		return repository.findAll();		
@@ -33,6 +34,7 @@ public class ProductController {
 	
 	@PostMapping("/products")
 	public Product addProduct(@RequestBody Product p)
+
 	{
 		return repository.save(p);
 	}
