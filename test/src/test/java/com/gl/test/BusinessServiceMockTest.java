@@ -17,7 +17,7 @@ import com.gl.test.services.BusinessService;
 import com.gl.test.services.DataService;
 
 @RunWith(MockitoJUnitRunner.class) //causes all initialization to take place with other annotation like @Mock @InjectMock
-//@SpringBootTest
+
 public class BusinessServiceMockTest {
 	
 	@Mock // create a mock for DataService
@@ -28,11 +28,23 @@ public class BusinessServiceMockTest {
 	
 	
 	@Test // TestCase 1 : having 3-elements in array
-	public void testFindTheMax() {
+	public void testFindTheMax_3Elements() {
 		when(dataServiceMock.getAll()).thenReturn(new int[] {36,84,97});
 		assertEquals(97,businessObj.findTheMax());
 	}
 	
+	@Test // TestCase 1 : having 3-elements in array
+	public void testFindTheMax_NegativeElement() {
+		when(dataServiceMock.getAll()).thenReturn(new int[] {-36,-84,-97,-123});
+		assertEquals(-36,businessObj.findTheMax());
+	}
+	
+	
+	@Test // TestCase 1 : having 3-elements in array
+	public void testFindTheMax_1Elements() {
+		when(dataServiceMock.getAll()).thenReturn(new int[] {36});
+		assertEquals(36,businessObj.findTheMax());
+	}
 	
 	
 
