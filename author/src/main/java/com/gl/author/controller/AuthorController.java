@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gl.author.model.Author;
 import com.gl.author.services.AuthorService;
 
+//Exposing the resource which need to be secured via JWT-based authentication
 @RestController
 @RequestMapping("/api/authors")
 public class AuthorController {
