@@ -17,7 +17,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name="users")
-public class UserDetails {
+public class DAOUser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//internally uses auto_increment for mysql

@@ -1,7 +1,6 @@
 package com.gl.author.config;
 
 import java.io.Serializable;
-import org.springframework.security.core.userdetails.User;
 
 
 import java.util.Date;
@@ -73,8 +72,8 @@ public class JwtTokenUtil implements Serializable {
 		return (!isTokenExpired(token) || ignoreTokenExpiration(token));
 	}
 
-	public Boolean validateToken(String token, User user) {
+	public Boolean validateToken(String token, UserDetails userDetails) {
 		final String username = getUsernameFromToken(token);
-		return (username.equals(user.getUsername()) && !isTokenExpired(token));
+		return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
 	}
 }

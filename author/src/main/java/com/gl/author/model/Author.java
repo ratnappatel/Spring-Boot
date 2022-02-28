@@ -1,6 +1,7 @@
 package com.gl.author.model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,10 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/*@Getter
+@Getter
 @Setter
 @NoArgsConstructor
-@ToString*/
+@ToString
 @Entity
 @Table(name = "authors")
 public class Author {
@@ -25,9 +26,7 @@ public class Author {
 	private String name;
 	private String mobile;
 	private int noOfBooks;
-	public Author() {
-		// TODO Auto-generated constructor stub
-	}
+	
 	public Author(int id, String name, String mobile, int noOfBooks) {
 		super();
 		this.id = id;
@@ -35,35 +34,4 @@ public class Author {
 		this.mobile = mobile;
 		this.noOfBooks = noOfBooks;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-	public int getNoOfBooks() {
-		return noOfBooks;
-	}
-	public void setNoOfBooks(int noOfBooks) {
-		this.noOfBooks = noOfBooks;
-	}
-	@Override
-	public String toString() {
-		return "Author [id=" + id + ", name=" + name + ", mobile=" + mobile + ", noOfBooks=" + noOfBooks + "]";
-	}
-	
-	
-
 }
